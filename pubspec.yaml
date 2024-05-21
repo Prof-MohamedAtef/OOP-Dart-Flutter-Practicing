@@ -67,6 +67,7 @@ flutter:
     - assets/image/ic_dots.png
     - assets/image/ic_profile1.jpg
     - assets/image/ic_profile2.png
+    - assets/image/mobile_iphone.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
