@@ -1,4 +1,5 @@
 import 'package:card_swiper/card_swiper.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,20 @@ class EcommerceHomePage extends StatelessWidget {
     "assets/image/mobile_iphone_2.jpg",
     "assets/image/mobile_iphone_3.png",
     "assets/image/mobile_iphone_4.jpg"
+  ];
+
+  final List<String> trucks = [
+    "assets/image/truck1.jpg",
+    "assets/image/truck2.jpg",
+    "assets/image/truck3.jpg",
+    "assets/image/truck4.jpg"
+  ];
+
+  final List<Widget> truckWidgets = [
+    Image.asset("assets/image/truck1.jpg"),
+    Image.asset("assets/image/truck2.jpg"),
+    Image.asset("assets/image/truck3.jpg"),
+    Image.asset("assets/image/truck4.jpg")
   ];
 
   @override
@@ -47,14 +62,29 @@ class EcommerceHomePage extends StatelessWidget {
                       ),
                       itemBuilder: (contex, index) {
                         return Image.asset(images[index]);
-                      } , itemCount: images.length,
+                      },
+                      itemCount: images.length,
                     ),
                   ),
                   const Text(
                     "Trucks",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                   ),
-                  FanCarouselImageSlider(imagesLink: images, isAssets: true, autoPlay: true, ),
+                  FanCarouselImageSlider(
+                    imagesLink: trucks,
+                    isAssets: true,
+                    autoPlay: true,
+                  ),
+                  SizedBox(height: 20,),
+                  const Text(
+                    "Trucks",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                  ),
+
+                  SizedBox(height: 300, child: CarouselSlider(options: CarouselOptions(), items: truckWidgets)),
+                  SizedBox(
+                    height: 20,
+                  ),
                   const Text(
                     "Offers",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
@@ -64,50 +94,66 @@ class EcommerceHomePage extends StatelessWidget {
                     height: 200,
                     width: 300,
                     decoration: BoxDecoration(
-                    //   // color: Colors.pink,
-                      borderRadius: BorderRadius.circular(10),
-                      image: const DecorationImage(
-                        fit: BoxFit.cover,
-                        // image: AssetImage("assets/image/mobile_iphone.jpeg")
-                        image: NetworkImage("https://www.zdnet.com/a/img/resize/7c135e7748ad80aa72743c58c1d067ba1a0fddcf/2023/10/06/4e7663f4-fe43-424e-8fde-64a5612cdfd7/img-1950.jpg?auto=webp&width=1280")
-                      )
-                      // gradient: LinearGradient(
-                      //   begin: Alignment.center,
-                      //   end: Alignment.bottomRight,
-                      //   colors: [
-                      //     Colors.pink,
-                      //     Colors.amber,
-                      //     Colors.green
-                      //   ]
-                      // )
-                    ),
+                        //   // color: Colors.pink,
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            // image: AssetImage("assets/image/mobile_iphone.jpeg")
+                            image: NetworkImage(
+                                "https://www.zdnet.com/a/img/resize/7c135e7748ad80aa72743c58c1d067ba1a0fddcf/2023/10/06/4e7663f4-fe43-424e-8fde-64a5612cdfd7/img-1950.jpg?auto=webp&width=1280"))
+                        // gradient: LinearGradient(
+                        //   begin: Alignment.center,
+                        //   end: Alignment.bottomRight,
+                        //   colors: [
+                        //     Colors.pink,
+                        //     Colors.amber,
+                        //     Colors.green
+                        //   ]
+                        // )
+                        ),
                   ),
-                  const SizedBox(height: 20,),
-                  Image.network("https://www.zdnet.com/a/img/resize/7c135e7748ad80aa72743c58c1d067ba1a0fddcf/2023/10/06/4e7663f4-fe43-424e-8fde-64a5612cdfd7/img-1950.jpg?auto=webp&width=1280"),
-                  const SizedBox(height: 20,),
-                  Image.asset("assets/image/mobile_iphone.jpeg", width: 100, height: 100, fit: BoxFit.cover,),
-                  const SizedBox(height: 20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Image.network(
+                      "https://www.zdnet.com/a/img/resize/7c135e7748ad80aa72743c58c1d067ba1a0fddcf/2023/10/06/4e7663f4-fe43-424e-8fde-64a5612cdfd7/img-1950.jpg?auto=webp&width=1280"),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Image.asset(
+                    "assets/image/mobile_iphone.jpeg",
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Row(
                     children: [
                       const SizedBox(
                         width: 150,
                         height: 150,
-                        child: Image(image: AssetImage("assets/image/mobile_iphone.jpeg",),),
+                        child: Image(
+                          image: AssetImage(
+                            "assets/image/mobile_iphone.jpeg",
+                          ),
+                        ),
                       ),
-                      const SizedBox(width: 15,),
+                      const SizedBox(
+                        width: 15,
+                      ),
                       Container(
                         width: 150,
                         height: 150,
                         decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage("https://www.zdnet.com/a/img/resize/7c135e7748ad80aa72743c58c1d067ba1a0fddcf/2023/10/06/4e7663f4-fe43-424e-8fde-64a5612cdfd7/img-1950.jpg?auto=webp&width=1280")
-                          )
-                        ),
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage(
+                                    "https://www.zdnet.com/a/img/resize/7c135e7748ad80aa72743c58c1d067ba1a0fddcf/2023/10/06/4e7663f4-fe43-424e-8fde-64a5612cdfd7/img-1950.jpg?auto=webp&width=1280"))),
                       )
                     ],
                   )
-
                 ],
               ),
             ),
