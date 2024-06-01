@@ -20,3 +20,7 @@ class TextFormCustomWidget extends StatelessWidget {
     return TextFormField(key: key, initialValue: text, style: style, keyboardType: textInputType);
   }
 }
+
+Widget CustomizedTextFormField({String? Function(String?)? validator}){
+  return TextFormField(validator: validator,);
+}
